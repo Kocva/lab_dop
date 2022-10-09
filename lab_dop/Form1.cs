@@ -22,14 +22,24 @@ namespace lab_dop
         private void BtnRefill_Click(object sender, EventArgs e)
         {
             this.TransportList.Clear();
-            for(var i =0; i<10;++i)
+            var rnd = new Random();
+            for (var i =0; i<10;++i)
             {
-                this.TransportList.Add(new Bike());
-
+                switch (rnd.Next() % 3)
+                {
+                    case 0:
+                        this.TransportList.Add(new Bike());
+                        break;
+                    case 1:
+                        this.TransportList.Add(new Car());
+                        break;
+                    case 2:
+                        this.TransportList.Add(new Plane());
+                        break;
+                }
             }
             ShowInfo();
         }
-
         private void ShowInfo()
         {
             int bikeCount = 0;
@@ -54,7 +64,7 @@ namespace lab_dop
 
             txtInfo.Text = "Велосипед\tМашина\tСамолет";
             txtInfo.Text += "\n";
-            txtInfo.Text += String.Format("{0}\t{1}\t{2}", bikeCount, carCount, planeCount);
+            txtInfo.Text += String.Format("{0}\t\t{1}\t{2}", bikeCount, carCount, planeCount);
         }
     }
 }
