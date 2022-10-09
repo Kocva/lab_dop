@@ -78,18 +78,7 @@ namespace lab_dop
             var transport = this.TransportList[0];
             this.TransportList.RemoveAt(0);
 
-            if (transport is Bike)
-            {
-                txtOut.Text = "Велосипед";
-            }
-            else if (transport is Car)
-            {
-                txtOut.Text = "Автомобиль";
-            }
-            else if (transport is Plane)
-            {
-                txtOut.Text = "Самолет";
-            }
+            txtOut.Text = transport.GetInfo();
             ShowInfo();
         }
     }
