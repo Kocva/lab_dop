@@ -28,13 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnRefill = new System.Windows.Forms.Button();
+            this.txtInfo = new System.Windows.Forms.RichTextBox();
+            this.txtOut = new System.Windows.Forms.RichTextBox();
+            this.btnGet = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnRefill
+            // 
+            this.btnRefill.Location = new System.Drawing.Point(12, 12);
+            this.btnRefill.Name = "btnRefill";
+            this.btnRefill.Size = new System.Drawing.Size(206, 34);
+            this.btnRefill.TabIndex = 0;
+            this.btnRefill.Text = "Перезаполнить";
+            this.btnRefill.UseVisualStyleBackColor = true;
+            this.btnRefill.Click += new System.EventHandler(this.BtnRefill_Click);
+            // 
+            // txtInfo
+            // 
+            this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInfo.Location = new System.Drawing.Point(12, 52);
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.ReadOnly = true;
+            this.txtInfo.Size = new System.Drawing.Size(206, 66);
+            this.txtInfo.TabIndex = 1;
+            this.txtInfo.Text = "";
+            // 
+            // txtOut
+            // 
+            this.txtOut.Location = new System.Drawing.Point(12, 124);
+            this.txtOut.Name = "txtOut";
+            this.txtOut.Size = new System.Drawing.Size(100, 100);
+            this.txtOut.TabIndex = 2;
+            this.txtOut.Text = "";
+            // 
+            // btnGet
+            // 
+            this.btnGet.Location = new System.Drawing.Point(118, 124);
+            this.btnGet.Name = "btnGet";
+            this.btnGet.Size = new System.Drawing.Size(100, 100);
+            this.btnGet.TabIndex = 3;
+            this.btnGet.Text = "Взять";
+            this.btnGet.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(376, 363);
+            this.Controls.Add(this.btnGet);
+            this.Controls.Add(this.txtOut);
+            this.Controls.Add(this.txtInfo);
+            this.Controls.Add(this.btnRefill);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnRefill;
+        private System.Windows.Forms.RichTextBox txtInfo;
+        private System.Windows.Forms.RichTextBox txtOut;
+        private System.Windows.Forms.Button btnGet;
     }
 }
 
