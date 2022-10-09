@@ -8,6 +8,7 @@ namespace lab_dop
 {
     public class Transport
     {
+        public int wheels = 0;
         public static Random rnd = new Random();
         public virtual String GetInfo()
         {
@@ -24,15 +25,17 @@ namespace lab_dop
             var str = "Я велосипед";
             str += String.Format("\nтип: {0}", this.type);
             str += String.Format("\nРадиус колес: {0}", this.radius);
+            str += String.Format("\nкол-во колес: {0}", this.wheels);
             return str;
         }
         public static Bike Generate()
         {
-            
+
             return new Bike
             {
                 type = (BikeType)rnd.Next(2),
-                radius = 15 + rnd.Next() % 6
+                radius = 15 + rnd.Next() % 6,
+                wheels = 2 + rnd.Next() % 2
             };
         }
     }
@@ -48,6 +51,7 @@ namespace lab_dop
             str += String.Format("\nтип: {0}", this.type);
             str += String.Format("\nОбъём двигателя: {0}", this.volume);
             str += String.Format("\nкол-во дверей: {0}", this.doors);
+            str += String.Format("\nкол-во колес: {0}", this.wheels);
             return str;
         }
         public static Car Generate()
@@ -57,7 +61,8 @@ namespace lab_dop
             {
                 type = (CarType)rnd.Next(4),
                 volume = 1 + rnd.Next() % 5,
-                doors = 3 + rnd.Next() % 2
+                doors = 3 + rnd.Next() % 2,
+                wheels = 4 + rnd.Next() % 2
             };
         }
     }
@@ -72,6 +77,7 @@ namespace lab_dop
             var str = "Я самолет";
             str += String.Format("\nтип двигателя: {0}", this.engineType);
             str += String.Format("\nмакс. высота: {0}", this.height);
+            str += String.Format("\nкол-во колес: {0}", this.wheels);
             return str;
         }
         public static Plane Generate()
@@ -80,7 +86,8 @@ namespace lab_dop
             return new Plane
             {
                 engineType = (EngineType)rnd.Next(2),
-                height = 1000 + rnd.Next() % 9000
+                height = 1000 + rnd.Next() % 9000,
+                wheels = 3 + rnd.Next() % 1
             };
         }
     }
