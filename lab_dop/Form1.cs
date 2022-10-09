@@ -28,13 +28,13 @@ namespace lab_dop
                 switch (rnd.Next() % 3)
                 {
                     case 0:
-                        this.TransportList.Add(new Bike());
+                        this.TransportList.Add(Bike.Generate());
                         break;
                     case 1:
-                        this.TransportList.Add(new Car());
+                        this.TransportList.Add(Car.Generate());
                         break;
                     case 2:
-                        this.TransportList.Add(new Plane());
+                        this.TransportList.Add(Plane.Generate());
                         break;
                 }
             }

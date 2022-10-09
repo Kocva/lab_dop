@@ -8,6 +8,7 @@ namespace lab_dop
 {
     public class Transport
     {
+        public static Random rnd = new Random();
         public virtual String GetInfo()
         {
             return "я транспорт";
@@ -25,6 +26,15 @@ namespace lab_dop
             str += String.Format("\nРадиус колес: {0}", this.radius);
             return str;
         }
+        public static Bike Generate()
+        {
+            
+            return new Bike
+            {
+                type = (BikeType)rnd.Next(2),
+                radius = 15 + rnd.Next() % 6
+            };
+        }
     }
     public enum CarType { bus, truck, offroad, passenger };
     public class Car : Transport
@@ -40,6 +50,16 @@ namespace lab_dop
             str += String.Format("\nкол-во дверей: {0}", this.doors);
             return str;
         }
+        public static Car Generate()
+        {
+            
+            return new Car
+            {
+                type = (CarType)rnd.Next(4),
+                volume = 1 + rnd.Next() % 5,
+                doors = 3 + rnd.Next() % 2
+            };
+        }
     }
 
     public enum EngineType {reactive, piston}
@@ -53,6 +73,15 @@ namespace lab_dop
             str += String.Format("\nтип двигателя: {0}", this.engineType);
             str += String.Format("\nмакс. высота: {0}", this.height);
             return str;
+        }
+        public static Plane Generate()
+        {
+            
+            return new Plane
+            {
+                engineType = (EngineType)rnd.Next(2),
+                height = 1000 + rnd.Next() % 9000
+            };
         }
     }
 }
