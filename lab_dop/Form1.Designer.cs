@@ -32,13 +32,16 @@
             this.txtInfo = new System.Windows.Forms.RichTextBox();
             this.txtOut = new System.Windows.Forms.RichTextBox();
             this.btnGet = new System.Windows.Forms.Button();
+            this.txtQueue = new System.Windows.Forms.RichTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRefill
             // 
             this.btnRefill.Location = new System.Drawing.Point(12, 12);
             this.btnRefill.Name = "btnRefill";
-            this.btnRefill.Size = new System.Drawing.Size(206, 34);
+            this.btnRefill.Size = new System.Drawing.Size(350, 34);
             this.btnRefill.TabIndex = 0;
             this.btnRefill.Text = "Перезаполнить";
             this.btnRefill.UseVisualStyleBackColor = true;
@@ -50,39 +53,58 @@
             this.txtInfo.Location = new System.Drawing.Point(12, 52);
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.ReadOnly = true;
-            this.txtInfo.Size = new System.Drawing.Size(206, 66);
+            this.txtInfo.Size = new System.Drawing.Size(350, 66);
             this.txtInfo.TabIndex = 1;
             this.txtInfo.Text = "";
             // 
             // txtOut
             // 
-            this.txtOut.Location = new System.Drawing.Point(12, 124);
+            this.txtOut.Location = new System.Drawing.Point(13, 270);
             this.txtOut.Name = "txtOut";
-            this.txtOut.Size = new System.Drawing.Size(100, 100);
+            this.txtOut.Size = new System.Drawing.Size(205, 100);
             this.txtOut.TabIndex = 2;
             this.txtOut.Text = "";
             // 
             // btnGet
             // 
-            this.btnGet.Location = new System.Drawing.Point(118, 124);
+            this.btnGet.Location = new System.Drawing.Point(224, 270);
             this.btnGet.Name = "btnGet";
-            this.btnGet.Size = new System.Drawing.Size(100, 100);
+            this.btnGet.Size = new System.Drawing.Size(138, 100);
             this.btnGet.TabIndex = 3;
             this.btnGet.Text = "Взять";
             this.btnGet.UseVisualStyleBackColor = true;
             this.btnGet.Click += new System.EventHandler(this.BtnGet_Click);
             // 
+            // txtQueue
+            // 
+            this.txtQueue.Location = new System.Drawing.Point(13, 125);
+            this.txtQueue.Name = "txtQueue";
+            this.txtQueue.Size = new System.Drawing.Size(205, 139);
+            this.txtQueue.TabIndex = 4;
+            this.txtQueue.Text = "";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(224, 125);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 139);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 241);
+            this.ClientSize = new System.Drawing.Size(374, 380);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtQueue);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.txtOut);
             this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.btnRefill);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -93,6 +115,8 @@
         private System.Windows.Forms.RichTextBox txtInfo;
         private System.Windows.Forms.RichTextBox txtOut;
         private System.Windows.Forms.Button btnGet;
+        private System.Windows.Forms.RichTextBox txtQueue;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

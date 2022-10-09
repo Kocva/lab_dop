@@ -17,6 +17,7 @@ namespace lab_dop
         {
             InitializeComponent();
             ShowInfo();
+            ShowQueue();
         }
 
         private void BtnRefill_Click(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace lab_dop
                 }
             }
             ShowInfo();
+            ShowQueue();
         }
         private void ShowInfo()
         {
@@ -80,6 +82,34 @@ namespace lab_dop
 
             txtOut.Text = transport.GetInfo();
             ShowInfo();
+            ShowQueue();
         }
+
+        private void ShowQueue()
+        {
+            txtQueue.Text = "";
+            if (this.TransportList.Count == 0)
+            {
+                txtQueue.Text = "Пусто Q_Q";
+                return;
+            }
+            foreach (var transport in this.TransportList)
+            {
+
+                if (transport is Bike)
+                {
+                    txtQueue.Text += "велосипед\n";
+                }
+                else if (transport is Car)
+                {
+                    txtQueue.Text += "автомобиль\n";
+                }
+                else if (transport is Plane)
+                {
+                    txtQueue.Text += "самолет\n";
+                }
+            }
+        }
+
     }
 }
