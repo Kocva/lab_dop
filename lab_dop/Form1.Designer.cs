@@ -33,8 +33,8 @@
             this.txtOut = new System.Windows.Forms.RichTextBox();
             this.btnGet = new System.Windows.Forms.Button();
             this.txtQueue = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pctrInfo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pctrInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRefill
@@ -83,20 +83,21 @@
             this.txtQueue.TabIndex = 4;
             this.txtQueue.Text = "";
             // 
-            // pictureBox1
+            // pctrInfo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(224, 125);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 139);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pctrInfo.Location = new System.Drawing.Point(224, 125);
+            this.pctrInfo.Name = "pctrInfo";
+            this.pctrInfo.Size = new System.Drawing.Size(138, 139);
+            this.pctrInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctrInfo.TabIndex = 5;
+            this.pctrInfo.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 380);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pctrInfo);
             this.Controls.Add(this.txtQueue);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.txtOut);
@@ -104,7 +105,7 @@
             this.Controls.Add(this.btnRefill);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctrInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -116,7 +117,7 @@
         private System.Windows.Forms.RichTextBox txtOut;
         private System.Windows.Forms.Button btnGet;
         private System.Windows.Forms.RichTextBox txtQueue;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctrInfo;
     }
 }
 

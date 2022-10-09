@@ -18,6 +18,7 @@ namespace lab_dop
             InitializeComponent();
             ShowInfo();
             ShowQueue();
+            
         }
 
         private void BtnRefill_Click(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace lab_dop
             }
             ShowInfo();
             ShowQueue();
+            
         }
         private void ShowInfo()
         {
@@ -63,7 +65,7 @@ namespace lab_dop
                     planeCount += 1;
                 }
             }
-
+            
             txtInfo.Text = "Велосипед\tавто\tСамолет";
             txtInfo.Text += "\n";
             txtInfo.Text += String.Format("{0}\t\t{1}\t{2}", bikeCount, carCount, planeCount);
@@ -74,6 +76,7 @@ namespace lab_dop
             if (this.TransportList.Count == 0)
             {
                 txtOut.Text = "Пусто Q_Q";
+                pctrInfo.Image = Properties.Resources.end;
                 return;
             }
 
@@ -83,6 +86,7 @@ namespace lab_dop
             txtOut.Text = transport.GetInfo();
             ShowInfo();
             ShowQueue();
+            ShowPicture(transport);
         }
 
         private void ShowQueue()
@@ -109,6 +113,26 @@ namespace lab_dop
                     txtQueue.Text += "самолет\n";
                 }
             }
+        }
+
+        private void ShowPicture(Transport transport)
+        {
+            
+            if (transport is Bike)
+            {
+                pctrInfo.Image = Properties.Resources.bike;
+            }
+            else if (transport is Car)
+            {
+                pctrInfo.Image = Properties.Resources.car;
+            }
+            else if (transport is Plane)
+            {
+                pctrInfo.Image = Properties.Resources.plane;
+            }
+            
+            
+
         }
 
     }
