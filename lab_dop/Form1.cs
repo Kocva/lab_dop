@@ -62,9 +62,35 @@ namespace lab_dop
                 }
             }
 
-            txtInfo.Text = "Велосипед\tМашина\tСамолет";
+            txtInfo.Text = "Велосипед\tавто\tСамолет";
             txtInfo.Text += "\n";
             txtInfo.Text += String.Format("{0}\t\t{1}\t{2}", bikeCount, carCount, planeCount);
+        }
+
+        private void BtnGet_Click(object sender, EventArgs e)
+        {
+            if (this.TransportList.Count == 0)
+            {
+                txtOut.Text = "Пусто Q_Q";
+                return;
+            }
+
+            var transport = this.TransportList[0];
+            this.TransportList.RemoveAt(0);
+
+            if (transport is Bike)
+            {
+                txtOut.Text = "Велосипед";
+            }
+            else if (transport is Car)
+            {
+                txtOut.Text = "Автомобиль";
+            }
+            else if (transport is Plane)
+            {
+                txtOut.Text = "Самолет";
+            }
+            ShowInfo();
         }
     }
 }
